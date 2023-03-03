@@ -9,7 +9,7 @@ const FoodSchema = new Schema({
 })
 
 FoodSchema.virtual("url").get( function() {
-    return `/food/${this.store.name}/${this.name}/${this._id}`
+    return `/food/${encodeURIComponent(this.name)}/${this._id}`
 })
 
 module.exports = mongoose.model("Food", FoodSchema);

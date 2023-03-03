@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Food Record' });
 });
 
-router.get('/food/:storeName/:foodName/:id',food_controller.food_details);
+router.get('/food/:foodName/:id',food_controller.food_details);
 
 router.get('/locations',location_controller.locaiton_list);
 router.get('/location/:name/:id',location_controller.locaiton_details);
