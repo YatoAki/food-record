@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <ol>
+        <% Object.keys(location_list).forEach(function(key) { %>
+            <li>
+                <a href=<%=location_list[key].url%> ><%=location_list[key].name%></a>
+            </li>
+          
+          
+        <% }); %>
+    </ol>
+  </body>
+</html>

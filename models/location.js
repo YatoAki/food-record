@@ -6,8 +6,8 @@ const LocationSchema = new Schema({
     name: {type:String, required: true, maxLength: 100},
 })
 
-LocationSchema.virtual("url").get( () => {
-    return `/location/${this.name}/${this._id}`
+LocationSchema.virtual("url").get( function() {
+    return `/location/${encodeURIComponent(this.name)}/${this._id}`
 })
 
 module.exports = mongoose.model("Location", LocationSchema);
