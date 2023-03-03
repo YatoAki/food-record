@@ -7,8 +7,8 @@ const StoreSchema = new Schema({
     location: {type: Schema.Types.ObjectId, ref:"Location", required: true},
 })
 
-StoreSchema.virtual("url").get( () => {
-    return `/store/${this.name}/${this._id}`
+StoreSchema.virtual("url").get( function() {
+    return `/store/${encodeURIComponent(this.name)}/${this._id}`
 })
 
 module.exports = mongoose.model("Store", StoreSchema);

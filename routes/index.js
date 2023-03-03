@@ -19,6 +19,6 @@ router.get('/location/:name/:id',location_controller.locaiton_details);
 
 
 router.get('/stores',store_controller.store_list);
-router.get('/stores/:name/:id',store_controller.store_details);
+router.get('/store/:name/:id',store_controller.store_details);
 
 module.exports = router;
