@@ -8,4 +8,4 @@ const RatingSchema = new Schema({
     food: {type:Schema.Types.ObjectId, ref: "Food", required: true},
 })
 
-module.exports = mongoose.model("rating", RatingSchema);
+module.exports = mongoose.model("Rating", RatingSchema);
