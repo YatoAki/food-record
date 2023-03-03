@@ -8,7 +8,7 @@ const FoodSchema = new Schema({
     store: {type:Schema.Types.ObjectId, ref: "Store", required: true},
 })
 
-FoodSchema.virtual("url").get( () => {
+FoodSchema.virtual("url").get( function() {
     return `/food/${this.store.name}/${this.name}/${this._id}`
 })
 
